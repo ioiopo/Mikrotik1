@@ -4,139 +4,21 @@
   <meta charset="UTF-8" />
   <title>لوحة التحكم</title>
   <style>
-/* إعادة ضبط بعض القواعد الأساسية */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
-  min-height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-
-/* شريط التنقل */
-nav {
-  background-color: #004aad;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  user-select: none;
-}
-
-nav a:hover,
-nav a.active {
-  background-color: #003080;
-}
-
-/* العناوين */
-h1, h2 {
-  color: #004aad;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
-/* التسميات */
-label {
-  display: block;
-  max-width: 300px;
-  margin: 15px auto 6px auto;
-  color: #222;
-  font-weight: 600;
-  text-align: center;
-}
-
-/* الحقول النصية */
-input[type="text"],
-input[type="number"],
-input[type="password"] {
-  width: 280px;
-  max-width: 90vw;
-  padding: 8px 10px;
-  border: 1.8px solid #bbb;
-  border-radius: 6px;
-  font-size: 16px;
-  margin: 0 auto 12px auto;
-  display: block;
-  text-align: center;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus {
-  border-color: #004aad;
-  outline: none;
-  box-shadow: 0 0 6px #a2c5ff;
-}
-
-/* الأزرار */
-button {
-  margin-top: 15px;
-  padding: 10px 28px;
-  font-size: 17px;
-  cursor: pointer;
-  border-radius: 6px;
-  border: none;
-  font-weight: 700;
-  color: white;
-  background-color: #004aad;
-  transition: background-color 0.3s ease;
-  user-select: none;
-}
-
-button:hover:not(:disabled) {
-  background-color: #002e6b;
-}
-
-button:disabled {
-  background-color: #888;
-  cursor: not-allowed;
-}
-
-/* قائمة المستخدمين */
-#usersList {
-  margin-top: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  min-height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: right;
-  font-size: 16px;
-  color: #222;
-  user-select: text;
-}
-
-.user-item {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.user-item:last-child {
-  border-bottom: none;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; color: #333; min-height: 100vh; padding: 20px; text-align: center; }
+    nav { background-color: #004aad; padding: 12px 20px; display: flex; justify-content: center; gap: 15px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+    nav a { color: white; text-decoration: none; font-weight: 600; padding: 8px 15px; border-radius: 6px; transition: background-color 0.3s ease; user-select: none; }
+    nav a:hover, nav a.active { background-color: #003080; }
+    h1, h2 { color: #004aad; font-weight: 700; margin-bottom: 25px; }
+    label { display: block; max-width: 300px; margin: 15px auto 6px auto; color: #222; font-weight: 600; text-align: center; }
+    input[type="text"], input[type="number"], input[type="password"] { width: 280px; max-width: 90vw; padding: 8px 10px; border: 1.8px solid #bbb; border-radius: 6px; font-size: 16px; margin: 0 auto 12px auto; display: block; text-align: center; transition: border-color 0.3s ease; }
+    input:focus { border-color: #004aad; outline: none; box-shadow: 0 0 6px #a2c5ff; }
+    button { margin-top: 15px; padding: 10px 28px; font-size: 17px; cursor: pointer; border-radius: 6px; border: none; font-weight: 700; color: white; background-color: #004aad; transition: background-color 0.3s ease; user-select: none; }
+    button:hover:not(:disabled) { background-color: #002e6b; }
+    button:disabled { background-color: #888; cursor: not-allowed; }
+    #usersList { margin-top: 30px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 600px; min-height: 150px; margin-left: auto; margin-right: auto; text-align: right; font-size: 16px; color: #222; user-select: text; }
+    .user-item { padding: 10px; border-bottom: 1px solid #ddd; }
+    .user-item:last-child { border-bottom: none; }
   </style>
 </head>
 <body>
@@ -169,7 +51,7 @@ button:disabled {
   </div>
 
 <script>
-  const API_BASE = '/api';
+  const API_BASE = 'https://mikrotik-1.onrender.com/api';
 
   const ipInput = document.getElementById('ip');
   const portInput = document.getElementById('port');
@@ -179,27 +61,42 @@ button:disabled {
   const fetchUsersBtn = document.getElementById('fetchUsersBtn');
   const usersList = document.getElementById('usersList');
 
-  // تحميل بيانات الراوتر من السيرفر عند بداية الصفحة
+  // تحميل بيانات الراوتر من localStorage أو السيرفر
   async function loadRouterData() {
-    try {
-      const res = await fetch(`${API_BASE}/data`);
-      if (!res.ok) throw new Error('فشل في جلب البيانات');
-      const data = await res.json();
-      if (data.router) {
-        ipInput.value = data.router.ip || '';
-        portInput.value = data.router.port || 8728;
-        usernameInput.value = data.router.username || '';
-        passwordInput.value = data.router.password || '';
+    // جرب قراءة البيانات من localStorage أولاً
+    const localRouter = localStorage.getItem('router');
+    if (localRouter) {
+      const routerData = JSON.parse(localRouter);
+      ipInput.value = routerData.ip || '';
+      portInput.value = routerData.port || 8728;
+      usernameInput.value = routerData.username || '';
+      passwordInput.value = routerData.password || '';
+    } else {
+      // لو مفيش بيانات محليّة، جرب تجيبها من السيرفر
+      try {
+        const res = await fetch(`${API_BASE}/data`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.router) {
+            ipInput.value = data.router.ip || '';
+            portInput.value = data.router.port || 8728;
+            usernameInput.value = data.router.username || '';
+            passwordInput.value = data.router.password || '';
+            // احفظها محلياً كمان
+            localStorage.setItem('router', JSON.stringify(data.router));
+          }
+          if (data.users && data.users.length > 0) {
+            renderUsers(data.users);
+            localStorage.setItem('users', JSON.stringify(data.users));
+          }
+        }
+      } catch (err) {
+        console.error('فشل في جلب بيانات السيرفر', err);
       }
-      if (data.users && data.users.length > 0) {
-        renderUsers(data.users);
-      }
-    } catch (error) {
-      console.error(error);
     }
   }
 
-  // حفظ بيانات الراوتر في السيرفر + localStorage
+  // حفظ بيانات الراوتر
   saveRouterBtn.onclick = async () => {
     const ip = ipInput.value.trim();
     const port = parseInt(portInput.value) || 8728;
@@ -215,33 +112,31 @@ button:disabled {
       saveRouterBtn.disabled = true;
       saveRouterBtn.textContent = 'جارٍ الحفظ...';
 
-      // مسح بيانات الراوتر واليوزرز القديمة من localStorage
-      localStorage.removeItem('router');
-      localStorage.removeItem('users');
-
-      // حفظ بيانات الراوتر الجديدة في localStorage
-      localStorage.setItem('router', JSON.stringify({ ip, port, username, password }));
-
-      // ارسال البيانات للسيرفر (API)
       const res = await fetch(`${API_BASE}/router`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ ip, port, username, password }),
       });
 
-      if (!res.ok) throw new Error('فشل في الحفظ');
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'فشل في الحفظ');
+      }
+
+      // مسح البيانات القديمة وحفظ الجديدة في localStorage
+      localStorage.removeItem('router');
+      localStorage.setItem('router', JSON.stringify({ ip, port, username, password }));
 
       alert('تم حفظ بيانات الراوتر بنجاح');
     } catch (error) {
-      alert('حدث خطأ أثناء الحفظ');
-      console.error(error);
+      alert(`حدث خطأ أثناء الحفظ: ${error.message}`);
     } finally {
       saveRouterBtn.disabled = false;
       saveRouterBtn.textContent = 'حفظ بيانات الراوتر';
     }
   };
 
-  // عرض المستخدمين في القائمة
+  // عرض المستخدمين
   function renderUsers(users) {
     if (!users || users.length === 0) {
       usersList.innerHTML = '<p>لا توجد بيانات مستخدمين.</p>';
@@ -256,20 +151,23 @@ button:disabled {
     });
   }
 
-  // جلب المستخدمين من الراوتر مباشرة
+  // جلب المستخدمين من الراوتر
   fetchUsersBtn.onclick = async () => {
     fetchUsersBtn.disabled = true;
     fetchUsersBtn.textContent = 'جارٍ جلب المستخدمين...';
 
     try {
       const res = await fetch(`${API_BASE}/fetch-users`);
-      if (!res.ok) throw new Error('فشل في جلب المستخدمين');
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'فشل في جلب المستخدمين');
+      }
       const data = await res.json();
       renderUsers(data.users);
+      localStorage.setItem('users', JSON.stringify(data.users));
       alert('تم جلب المستخدمين من الراوتر بنجاح');
     } catch (error) {
-      alert('فشل في جلب المستخدمين من الراوتر');
-      console.error(error);
+      alert(`فشل في جلب المستخدمين: ${error.message}`);
     } finally {
       fetchUsersBtn.disabled = false;
       fetchUsersBtn.textContent = 'جلب المستخدمين من الراوتر';
